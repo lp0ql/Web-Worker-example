@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 // set your Worker title
 export const generateExampleWorkerUrl = () => {
     return URL.createObjectURL(
