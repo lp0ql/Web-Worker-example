@@ -15,3 +15,7 @@ worker.addEventListener("message" , (e) => {
 
 // Worker 内のイベントリスナーを実行する
 worker.postMessage("send text to EventListener in Worker.");
+
+
+// Worker を閉じる
+worker.terminate();
