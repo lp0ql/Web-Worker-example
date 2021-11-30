@@ -5,15 +5,17 @@ export const generateExampleWorkerUrl = () => {
         new Blob([
           '(',
           function () {
+           const worker : Worker = self as any;
            //↓↓↓↓↓この関数内にWorkerの処理内容を書く - Worker thread process  write here.↓↓↓↓↓
            
+              
            // ホストスレッドのイベントを受け取る
            self.addEventListener("message", (e) => {
              console.log(e.data);
            })
 
 
-           self.postMessage("send message to EventListener in Host Thread.");
+           worker.postMessage("send message to EventListener in Host Thread.");
 
            // ↑↑↑↑↑この関数内にWorkerの処理内容を書く - Worker thread process  write here.↑↑↑↑↑
     
